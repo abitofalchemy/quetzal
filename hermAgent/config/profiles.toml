@@ -1,0 +1,30 @@
+# Single source of truth for Hermes runtime settings.
+# `target`  = deployment hardware (picked by --target or auto-detected).
+# `backend` = where the model runs (picked by --backend or the target's default).
+
+hermes_version = "0.19.0"
+toolsets = ["file", "terminal"]   # minimal allowlist; everything else is disabled
+approval_mode = "manual"          # every flagged terminal command needs a yes
+context_length = 65536            # Hermes 0.19 refuses models with < 64K context
+
+[targets.linux-dev]
+description = "Prototype laptop: RTX 4050 6 GB, 7.5 GB RAM"
+match = { system = "Linux" }
+default_backend = "openrouter"
+
+[targets.mac-m4]
+description = "Deployment: Mac mini M4 Pro, 24 GB unified memory"
+match = { system = "Darwin", machine = "arm64" }
+default_backend = "openrouter"
+
+[backends.openrouter]
+provider = "openrouter"
+model = "qwen/qwen3-30b-a3b-instruct-2507"   # 262K ctx
+base_url = "https://openrouter.ai/api/v1"
+api_key_env = "OPENROUTER_API_KEY"
+
+[backends.ollama]
+provider = "custom"
+model = "qwen3:4b-instruct-2507"   # ~2.5 GB Q4 + ~5 GB KV at 64K (q8 cache)
+base_url = "http://localhost:11434/v1"
+api_key_env = ""                   # local; no key
