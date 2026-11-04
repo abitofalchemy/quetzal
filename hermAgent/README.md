@@ -4,6 +4,10 @@ Reproducible [Hermes Agent](https://github.com/NousResearch/hermes-agent) setup:
 
 ## Architecture
 
+![hermAgent architecture on linux-dev](docs/architecture.png)
+
+Regenerate with `uv run --no-project --with matplotlib==3.10.0 python scripts/architecture.py`.
+
 ```
 hagent --target <hw> --backend <llm> chat
    │
