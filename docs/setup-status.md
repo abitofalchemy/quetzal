@@ -24,7 +24,7 @@ vllm serve Qwen/Qwen2.5-1.5B-instruct --max-model-len 2048 --max-num-seqs 2 \
 | Item | Status |
 |---|---|
 | GPU | RTX 4050 with 6 GB VRAM; meets vLLM's compute capability requirement |
-| Driver and CUDA | Driver 580 reports CUDA 13.0; vLLM ships CUDA 13.0 builds |
+| Driver and CUDA | Driver 580 reports CUDA 13.0, but `--torch-backend=auto` installed torch 2.13.0+cu132 (CUDA 13.2). Possible mismatch: if CUDA still fails after the `nvidia_uvm` fix, reinstall with `--torch-backend=cu130` |
 | Model fit | 4-bit Qwen 1.5B estimated at about 3.1 GB, but for GGUF, not vLLM |
 | RAM | Tight: 7.5 GB with no swap; add swap |
 | Disk | Slow: live session on USB, `.venv` is 7.9 GB; move to internal NVMe if possible |
