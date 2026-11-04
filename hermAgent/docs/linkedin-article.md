@@ -1,5 +1,7 @@
 # I set up an AI agent you can rebuild from scratch in one command. Here's how.
 
+![Architecture and tech stack](linkedin-architecture.png)
+
 Most "I installed an AI agent" posts end with "works on my machine." I wanted the opposite: an agent I could wipe and rebuild identically on a Linux laptop and on a Mac mini.
 
 **The agent:** Hermes Agent by Nous Research, an open-source, terminal-based AI agent.
@@ -24,15 +26,27 @@ Hermes refuses any model with less than 64K tokens of context, because its tool 
 
 **Rebuild from zero:**
 ```
-git clone <repo> && cd hermAgent
+git clone https://github.com/abitofalchemy/quetzal && cd quetzal/hermAgent
 ./scripts/setup.sh        # install, render config, run tests, run health check
 uv run hagent chat
 ```
+
+**Testing it before I move it (Linux laptop, RTX 4050, 7.5 GB RAM)**
+1. `uv run pytest -q` → 13/13 offline tests pass
+2. `uv run hagent doctor` → 5/5 checks pass (binary, key, backend, model, config)
+3. A live agent turn: Hermes calls the terminal tool, I approve, it answers
+4. `./scripts/perf.sh` → logs to a CSV for each machine
+
+Linux baseline on OpenRouter: about 1.2 s to the first token, about 32 tokens/s, 8.8 s for a full agent turn that includes a tool call, and 139 MB peak memory for the agent. The model runs remotely, so the laptop barely notices.
+
+**Diagrams as code, too**
+The architecture figure above is a small matplotlib script in the repo, built from the same config the agent uses. When the setup changes, I re-run the script and the picture stays accurate.
 
 **Lessons**
 → Read the agent's source before choosing a model; the 64K minimum isn't on any model card.
 → Generate the agent's config from a tracked file instead of hand-editing it.
 → Log performance from day one, so moving to new hardware gets measured instead of guessed.
+→ Set up credentials before you need them: my first push failed because the laptop had no GitHub login, and `gh auth login` with a one-time device code fixed it in a minute.
 
 Results (Linux vs. M4 Pro): coming in the next post.
 
