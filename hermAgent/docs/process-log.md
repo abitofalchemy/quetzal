@@ -20,6 +20,6 @@ Goal (`plan.md`): run a Hermes Agent client with a minimal set of tools, set up 
 
 ## 4. Status
 - [x] Linux: install, config and 13 offline tests pass
-- [ ] Linux: live turn + perf baseline (needs `OPENROUTER_API_KEY`)
+- [x] Linux: live turn + perf baseline (2026-11-04: first token 1.0–2.4 s, agent turn 8.8 s, 139 MB peak memory)
 - [ ] Mac: `./scripts/setup.sh`, perf baseline (OpenRouter)
 - [ ] Mac: Ollama backend measured (`./scripts/ollama-mac.sh`, `BACKEND=ollama ./scripts/perf.sh`)
