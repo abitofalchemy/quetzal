@@ -35,15 +35,15 @@ Here is what you should expect to see:
 
 ### Prototype Box 
 
-|  Param  │ Description                                                                              │
+| **Param**   │ **Description**                                                                      │
 |---------|------------------------------------------------------------------------------------------|
-│ Model   │ MSI Thin GF63 12VE                                                                       │
-│ OS      │ Ubuntu 26.10, kernel 7.3.0-9                                                             │
-│ CPU     │ Intel Core i5-12450H: 8 cores, 12 threads                                                │
-│ RAM     │ 7.5 GiB total, about 3.5 GiB free right now; no swap                                     │
-│ GPU     │ NVIDIA RTX 4050 Laptop, 6 GB VRAM, driver 580.178.04, plus Intel UHD integrated graphics │
-│ Disk    │ / is 112 GB, with 22 GB used and 85 GB free                                              │
-│ Tooling │ System Python is 3.14.8, but the project runs on 3.12 through uv; uv is 0.13.6           │
+│ Model   │ MSI Thin GF63 12VE                                                                       
+│ OS      │ Ubuntu 26.10, kernel 7.3.0-9                                                             
+│ CPU     │ Intel Core i5-12450H: 8 cores, 12 threads                                                
+│ RAM     │ 7.5 GiB total, about 3.5 GiB free right now; no swap                                     
+│ GPU     │ NVIDIA RTX 4050 Laptop, 6 GB VRAM, driver 580.178.04, plus Intel UHD integrated graphics 
+│ Disk    │ / is 112 GB, with 22 GB used and 85 GB free                                              
+│ Tooling │ System Python is 3.14.8, but the project runs on 3.12 through uv; uv is 0.13.6           
 
 **Testing it before I move it (Linux laptop, RTX 4050, 7.5 GB RAM)**
 1. `uv run pytest -q` → 13/13 offline tests pass
