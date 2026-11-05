@@ -35,7 +35,7 @@ Here is what you should expect to see:
 
 ### Prototype Box 
 
-|         │                                                                                          │
+|  Param  │ Description                                                                              │
 |---------|------------------------------------------------------------------------------------------|
 │ Model   │ MSI Thin GF63 12VE                                                                       │
 │ OS      │ Ubuntu 26.10, kernel 7.3.0-9                                                             │
