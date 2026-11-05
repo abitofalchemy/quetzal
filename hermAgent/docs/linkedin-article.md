@@ -56,6 +56,8 @@ Linux baseline on OpenRouter: about 1.2 s to the first token, about 32 tokens/s,
 **Diagrams as code, too**
 The architecture figure above is a small matplotlib script in the repo, built from the same config the agent uses. When the setup changes, I re-run the script and the picture stays accurate.
 
+Below is a high-level architectural view:
+<img width="858" height="664" alt="image" src="./architecture.png" />
 
 **Lessons**
 → Read the agent's source before choosing a model; the 64K minimum isn't on any model card.
