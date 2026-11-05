@@ -34,8 +34,9 @@ Here is what you should expect to see:
 <img width="858" height="664" alt="image" src="https://github.com/user-attachments/assets/cdb90cf0-587a-4706-805f-a99beb4893c5" />
 
 ### Prototype Box 
-│         │                                                                                          │
-|---------|-------------|
+
+|         │                                                                                          │
+|---------|------------------------------------------------------------------------------------------|
 │ Model   │ MSI Thin GF63 12VE                                                                       │
 │ OS      │ Ubuntu 26.10, kernel 7.3.0-9                                                             │
 │ CPU     │ Intel Core i5-12450H: 8 cores, 12 threads                                                │
