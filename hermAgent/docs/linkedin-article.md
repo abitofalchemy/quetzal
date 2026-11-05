@@ -30,6 +30,8 @@ git clone https://github.com/abitofalchemy/quetzal && cd quetzal/hermAgent
 ./scripts/setup.sh        # install, render config, run tests, run health check
 uv run hagent chat
 ```
+Here is what you should expect to see:
+<img width="858" height="664" alt="image" src="https://github.com/user-attachments/assets/cdb90cf0-587a-4706-805f-a99beb4893c5" />
 
 **Testing it before I move it (Linux laptop, RTX 4050, 7.5 GB RAM)**
 1. `uv run pytest -q` → 13/13 offline tests pass
@@ -41,6 +43,7 @@ Linux baseline on OpenRouter: about 1.2 s to the first token, about 32 tokens/s,
 
 **Diagrams as code, too**
 The architecture figure above is a small matplotlib script in the repo, built from the same config the agent uses. When the setup changes, I re-run the script and the picture stays accurate.
+
 
 **Lessons**
 → Read the agent's source before choosing a model; the 64K minimum isn't on any model card.
